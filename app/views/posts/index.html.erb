@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>My Favorite Posts</h1>
+<% current_user.favorites.each do |favorite| %>
+Your wish posts : <%= link_to favorite.post.title, favorite.post%>
+
+<% end %>
+<h1>Posts</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path %>
